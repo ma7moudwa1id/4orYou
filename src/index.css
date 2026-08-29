@@ -1,0 +1,116 @@
+/*
+ * Background:
+   ^ bg-zinc-950
+
+ * Cards:
+   ^ bg-zinc-800
+
+ * Cards / Inputs:
+   ^ bg-zinc-800/80
+
+ * Borders:
+   ^ border-zinc-700/50
+
+ * Primary:
+   ^ blue-500
+
+ * Primary Hover:
+   ^ blue-600
+
+ * Main Text:
+   ^ text-zinc-100
+
+ * Secondary Text:
+   ^ text-zinc-400
+
+ * Muted Text:
+   ^ text-zinc-500
+*/
+
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Manrope", sans-serif;
+  @apply bg-zinc-950 text-zinc-100;
+}
+
+.form-control {
+  @apply w-full rounded-full border border-zinc-700/80 bg-zinc-800/70 px-4 py-3 pl-12
+  font-medium text-zinc-100 outline-none
+  placeholder:text-zinc-600
+  transition-all duration-200
+  hover:border-zinc-600
+  focus:border-blue-400
+  focus:bg-zinc-800
+  focus:ring-2
+  focus:ring-blue-500/20;
+}
+.gender {
+  @apply w-full cursor-pointer rounded-full border border-zinc-700/80
+  bg-zinc-800/60 px-4 py-3
+  transition-all duration-200
+  hover:border-zinc-600
+  hover:bg-zinc-800;
+}
+
+.btn-primary {
+  @apply p-4 rounded-full cursor-pointer font-bold bg-linear-to-l from-blue-500 from-50% to-blue-400 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/30 transition-transform duration-300;
+}
+/* ========================
+ * Custom Animations
+ * ======================== */
+
+/* Floating particles for NotFound page */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-15px) translateX(5px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(10px) translateX(-8px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Background radial gradient positioning fix */
+.bg-radial-\[at_50\%_110\%\] {
+  background: radial-gradient(at 50% 110%, var(--tw-gradient-stops));
+}
+
+span {
+  display: inline-block;
+}
