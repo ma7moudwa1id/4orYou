@@ -34,7 +34,7 @@ export default function Sidebar() {
   return (
     <>
       {/* Desktop */}
-      <div className="hidden lg:flex fixed top-0 h-screen w-70 bg-zinc-900 p-6 space-y-6 flex-col">
+      <div className="hidden lg:flex fixed top-0 h-screen w-70 bg-zinc-900 p-6 flex-col">
         <div className=" px-4">
           <h1 className="bg-linear-to-r from-cyan-300 to-blue-500 bg-clip-text text-transparent text-4xl font-black">
             4orYou
@@ -42,9 +42,9 @@ export default function Sidebar() {
           <p className="text-sm text-zinc-400">Premuim Social Platform</p>
         </div>
 
-        <div className="space-y-6 flex-1">
+        <div className="flex-1 space-y-6 mt-5">
           <nav>
-            <ul className="space-y-4">
+            <ul className="flex-1">
               {sideBar.map(({ Icon, label, to, badge }) => (
                 <li>
                   <NavLink
@@ -90,7 +90,7 @@ export default function Sidebar() {
             className="flex gap-2 items-center line-clamp-1"
           >
             <div className="size-11.25 rounded-full flex items-center justify-center bg-linear-to-tl from-cyan-300 to-blue-500 to-50%">
-              <div className="size-10 rounded-full overflow-hidden">
+              <div className="size-9 rounded-full overflow-hidden">
                 <img
                   className="size-full object-cover"
                   src={userData.photo}
@@ -120,13 +120,13 @@ export default function Sidebar() {
       </div>
 
       {/* Mobile */}
-      <div className="fixed z-10 bottom-2 left-1/2 -translate-x-1/2 w-[90%] p-6 h-14 bg-zinc-900/60 backdrop-blur-xl shadow-xl rounded-full border-2 border-white/60 flex justify-between items-center gap-6 lg:hidden">
+      <div className="fixed z-10 bottom-2 left-1/2 -translate-x-1/2 w-[90%] p-4 h-14 bg-zinc-900/60 backdrop-blur-xl shadow-xl rounded-full border-2 border-white/60 flex justify-between items-center gap-6 lg:hidden">
         <NavLink
           to={"/"}
           className={({ isActive }) =>
             isActive
-              ? "text-blue-500 size-10 rounded-full bg-blue-500/20 flex justify-center items-center"
-              : "size-10 rounded-full flex justify-center items-center"
+              ? "text-blue-500 size-9 rounded-full bg-blue-500/20 flex justify-center items-center"
+              : "size-9 rounded-full flex justify-center items-center"
           }
         >
           <Home />
@@ -136,8 +136,8 @@ export default function Sidebar() {
           className={({ isActive }) =>
             `relative flex items-center justify-center ${
               isActive
-                ? "text-blue-500 size-10 rounded-full bg-blue-500/20"
-                : "size-10 rounded-full"
+                ? "text-blue-500 size-9 rounded-full bg-blue-500/20"
+                : "size-9 rounded-full"
             }`
           }
         >
@@ -149,7 +149,7 @@ export default function Sidebar() {
           <Bell />
         </NavLink>
         <div
-          className="size-10 rounded-full bg-blue-500 flex justify-center items-center hover:scale-120 transition-transform duration-200 cursor-pointer"
+          className="size-9 rounded-full bg-blue-500 flex justify-center items-center hover:scale-120 transition-transform duration-200 cursor-pointer"
           onClick={() => {
             setCreateModal(true);
           }}
@@ -160,8 +160,8 @@ export default function Sidebar() {
           to={"/settings"}
           className={({ isActive }) =>
             isActive
-              ? "text-blue-500 size-10 rounded-full bg-blue-500/20 flex justify-center items-center"
-              : "size-10 rounded-full flex justify-center items-center"
+              ? "text-blue-500 size-9 rounded-full bg-blue-500/20 flex justify-center items-center"
+              : "size-9 rounded-full flex justify-center items-center"
           }
         >
           <Settings />
@@ -172,7 +172,7 @@ export default function Sidebar() {
           className="size-10 bg-linear-to-br from-cyan-300 to-blue-500 rounded-full flex items-center justify-center"
         >
           {userData && (
-            <div className="size-8 rounded-full overflow-hidden">
+            <div className="size-8.5 rounded-full overflow-hidden">
               <img
                 src={userData.photo}
                 alt={userData.name}

@@ -26,8 +26,6 @@ export default function Notifications() {
   ];
   const { userNotifications, markNotificationAsRead, markAllAsRead } =
     useContext(userContext);
-
-    console.log(userNotifications);
     
 
   const [btnFilter, setBtnFilter] = useState("All");

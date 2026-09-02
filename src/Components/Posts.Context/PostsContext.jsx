@@ -99,7 +99,7 @@ export function PostsContextProvider({ children }) {
 
   useEffect(() => {
     getAllposts();
-  }, []);
+  }, [token]);
 
   return (
     <>

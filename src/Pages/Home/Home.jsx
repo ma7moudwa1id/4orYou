@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="container w-[98%] mx-auto 2xl:max-w-4xl lg:ml-68 2xl:ml-70.5 p-6 px-2.5 md:p-6 space-y-8">
+      <div className="container w-[98%] mx-auto xl:max-w-4xl lg:ml-68 xl:ml-70 p-6 px-2.5 md:p-6 space-y-4">
         {/* User Input Trigger */}
         {userData && (
           <div

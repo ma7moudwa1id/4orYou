@@ -50,15 +50,15 @@ export default function FreindSuggestion() {
     }
   }
   return (
-    <div className="hidden 2xl:block w-80 fixed right-5 top-5 bottom-5">
-      <div className="bg-white dark:bg-zinc-800/60 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sticky top-0">
+    <div className="hidden xl:block w-80 me-5 sticky top-5 h-[calc(100vh-2.5rem)]">
+      <div className="bg-zinc-800/60 rounded-xl shadow-sm borderborder-gray-700 p-4 sticky top-5 h-full flex flex-col">
         <div className="flex items-center justify-center pb-4 mb-4 border-b border-zinc-700">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
             Suggestions For You
           </h2>
         </div>
 
-        <div className="space-y-3 max-h-147.5 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
+        <div className="space-y-3 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent">
           {freindSuggestion ? (
             freindSuggestion.map((user) => (
               <div
