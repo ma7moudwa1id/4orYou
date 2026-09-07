@@ -102,7 +102,7 @@ export function UserContextProvider({ children }) {
   useEffect(() => {
     fetchUserdata();
     getUserNotifications();
-  }, []);
+  }, [token]);
   useEffect(() => {
     if (userData) {
       fetchUserPosts();

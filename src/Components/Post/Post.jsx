@@ -73,9 +73,9 @@ export default function Post({ postDetails, setDeletePost, topCommentShown }) {
     });
   }
 
-  const [likedPost, setLikedPost] = useState(likes?.includes(userData.id));
+  const [likedPost, setLikedPost] = useState(likes?.includes(userData?.id));
   const [likedComment, setLikeComment] = useState(
-    topComment?.likes?.includes(userData.id),
+    topComment?.likes?.includes(userData?.id),
   );
 
   const [commentMenu, setCommentMenu] = useState(null);
@@ -151,7 +151,7 @@ export default function Post({ postDetails, setDeletePost, topCommentShown }) {
               <div className="absolute top-10 right-0 p-3 rounded-2xl bg-zinc-700 shadow-2xl border border-zinc-700/50 z-10 min-w-40 animate-in fade-in slide-in-from-top-2 duration-200">
                 <ul className="text-zinc-100 font-medium flex flex-col gap-1">
                   <li
-                    className={`${userData._id === user._id ? "flex" : "hidden"} items-center gap-3 px-3 py-2 rounded-lg hover:bg-green-500/15 hover:text-green-300 transition-colors cursor-pointer`}
+                    className={`${userData?._id === user._id ? "flex" : "hidden"} items-center gap-3 px-3 py-2 rounded-lg hover:bg-green-500/15 hover:text-green-300 transition-colors cursor-pointer`}
                     onClick={() => {
                       setUpdateModal(true);
                       setUpdatedID(id);
@@ -163,7 +163,7 @@ export default function Post({ postDetails, setDeletePost, topCommentShown }) {
                     <span className="text-sm">Edit</span>
                   </li>
                   <li
-                    className={`${userData._id === user._id ? "flex" : "hidden"} items-center gap-3 px-3 py-2 rounded-lg hover:bg-red-500/15 hover:text-red-300 transition-colors cursor-pointer`}
+                    className={`${userData?._id === user._id ? "flex" : "hidden"} items-center gap-3 px-3 py-2 rounded-lg hover:bg-red-500/15 hover:text-red-300 transition-colors cursor-pointer`}
                     onClick={async () => {
                       await handleDeletePost(id);
                       setEditMenu(false);
@@ -273,7 +273,7 @@ export default function Post({ postDetails, setDeletePost, topCommentShown }) {
                     {handleDate(topComment.createdAt)}
                   </span>
 
-                  {topComment.commentCreator._id === userData.id && (
+                  {topComment.commentCreator._id === userData?.id && (
                     <>
                       <span className="relative ml-auto order-2 md:order-1">
                         <Ellipsis

@@ -98,7 +98,9 @@ export function PostsContextProvider({ children }) {
   }
 
   useEffect(() => {
-    getAllposts();
+    if (token) {
+      getAllposts();
+    }
   }, [token]);
 
   return (

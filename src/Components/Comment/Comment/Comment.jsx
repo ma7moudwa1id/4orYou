@@ -114,8 +114,8 @@ export default function Comment({ postId }) {
           <div className="flex items-start gap-3 mt-5">
             <div className="size-10 mt-1.5 rounded-full overflow-hidden shrink-0 ring-2 ring-blue-500/30">
               <img
-                src={userData.photo}
-                alt={userData.name}
+                src={userData?.photo}
+                alt={userData?.name}
                 className="size-full object-cover"
               />
             </div>
